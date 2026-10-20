@@ -1,0 +1,18 @@
+# Build output directories
+/out/
+/out-*/
+/KERNEL_OUT/
+
+# Prebuilt toolchain (cloned by Build / compile_kernel.sh)
+/gcc/
+
+# Build logs produced by Build
+/Defconfig.log
+/Kernel.log
+
+# Editor / OS noise
+*~
+*.swp
+*.orig
+*.rej
+.DS_Store
