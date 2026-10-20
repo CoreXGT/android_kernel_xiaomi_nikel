@@ -266,6 +266,11 @@ static void switch_charger_set_vindpm(unsigned int chr_v)
 #endif
 #endif
 
+/* Flag telling the charger to suspend charging while the screen is on.
+ * Declared here (outside the Pump Express block below) because it is also
+ * referenced from hw_charging_get_current() further down this file. */
+bool charge_suspend = KAL_TRUE;
+
 #if defined(CONFIG_MTK_PUMP_EXPRESS_PLUS_SUPPORT)
 static DEFINE_MUTEX(ta_mutex);
 
@@ -303,7 +308,6 @@ static void mtk_ta_reset_vchr(void)
 	battery_log(BAT_LOG_CRTI, "[PE+]mtk_ta_reset_vchr(): reset Vchr to 5V\n");
 }
 
-bool charge_suspend = KAL_TRUE;
 static void mtk_ta_increase(void)
 {
 	kal_bool ta_current_pattern = KAL_TRUE;	/* TRUE = increase */

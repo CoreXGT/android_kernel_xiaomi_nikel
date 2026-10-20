@@ -570,12 +570,7 @@ void bq24296_hw_component_detect(void)
 	unsigned int ret = 0;
 	unsigned char val = 0;
 
-<<<<<<< Updated upstream:drivers/misc/mediatek/power/mt6797/lct_bq24296.c
 	ret = bq24296_read_interface(0x0A, &val, 0xFF, 0x0);
-=======
-	//ret = bq24296_read_interface(0x0A, &val, 0x01, 0x04); // Edited for rn4x
-    ret = bq24296_read_interface(0x0A, &val, 0xFF, 0x0);
->>>>>>> Stashed changes:drivers/misc/mediatek/power/mt6797/rn4x_bq24296.c
 
 	if (val == 0)
 		g_bq24296_hw_exist = 0;
@@ -622,15 +617,7 @@ static int bq24296_driver_probe(struct i2c_client *client, const struct i2c_devi
 
 	/* --------------------- */
 	bq24296_hw_component_detect();
-<<<<<<< Updated upstream:drivers/misc/mediatek/power/mt6797/lct_bq24296.c
-=======
-	
-	//if (!g_bq24296_hw_exist) { // Add for rn4x
-		//battery_log(BAT_LOG_CRTI, "[bq24296] bq24296 does not exist!");
-		//return -1;
-	//}
-	
->>>>>>> Stashed changes:drivers/misc/mediatek/power/mt6797/rn4x_bq24296.c
+
 	bq24296_dump_register();
 	chargin_hw_init_done = KAL_TRUE;
 

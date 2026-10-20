@@ -3585,9 +3585,6 @@
 	leds: leds@0 {
 		compatible = "mediatek,leds";
 	};
-<<<<<<< Updated upstream
-=======
-
 	cw2015@0 {
 		compatible = "mediatek,cw2015";
 	};
@@ -3595,7 +3592,6 @@
     sw_charger@0 {
 		compatible = "mediatek,sw_charger";
     };
->>>>>>> Stashed changes
 };
 
 #include "nikel/cust.dtsi"

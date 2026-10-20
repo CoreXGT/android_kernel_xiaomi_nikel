@@ -95,19 +95,18 @@
 #if defined(CONFIG_MTK_PUMP_EXPRESS_PLUS_SUPPORT)
 #include <mach/mt_pe.h>
 #endif
-<<<<<<< Updated upstream
-=======
 
 #include <mach/cw2015_battery.h>
 
 //extern int g_cw2015_capacity; // Add for rn4x
 //extern int g_cw2015_vol; // Add for rn4x
 
-int FG_charging_status = 0; // Add for rn4x
+// NOTE: FG_charging_status is defined in
+// drivers/input/touchscreen/mediatek/ft5346/focaltech_core.c (rn4x).
+// Do not redefine it here, that would cause a duplicate symbol at link time.
 
 int Charger_enable_Flag = 1; // Add for rn4x
 
->>>>>>> Stashed changes
 /* ////////////////////////////////////////////////////////////////////////////// */
 /* Battery Logging Entry */
 /* ////////////////////////////////////////////////////////////////////////////// */
